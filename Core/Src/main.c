@@ -367,6 +367,7 @@ void StartDefaultTask(void const * argument)
   /* USER CODE BEGIN 5 */
   hosted_initialize();
   /* implemented synchronous */
+#if (MAIN_APP_CODE == LWIP_DEMO)
   ctrl_cmd_t req;
   req.msg_type = CTRL_REQ;
   req.ctrl_resp_cb = NULL;
@@ -387,6 +388,7 @@ void StartDefaultTask(void const * argument)
   if (STM_OK == convert_mac_to_bytes(parsed_mac, resp->u.wifi_mac.mac)) {
 	  lwip_startup(parsed_mac);
   }
+#endif
 
   /* Infinite loop */
   for (;;)

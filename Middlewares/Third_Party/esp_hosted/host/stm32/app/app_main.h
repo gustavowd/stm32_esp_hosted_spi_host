@@ -25,6 +25,9 @@ extern "C" {
 #include "netdev_api.h"
 
 /** Exported macros **/
+#define ARPING_DEMO	1
+#define LWIP_DEMO	2
+#define MAIN_APP_CODE ARPING_DEMO
 
 /** Exported variables **/
 

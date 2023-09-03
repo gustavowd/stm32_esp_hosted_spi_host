@@ -25,7 +25,9 @@
 #include "main.h"
 
 /** Constants/Macros **/
+#if (MAIN_APP_CODE == ARPING_DEMO)
 #define ARPING_PATH_TASK_STACK_SIZE     4096
+#endif
 
 #ifdef __GNUC__
 /* With GCC, small printf (option LD Linker->Libraries->Small printf
@@ -38,10 +40,12 @@
 /** Exported variables **/
 
 /** Function declaration **/
-//static void init_sta(void);
-//static void init_ap(void);
+#if (MAIN_APP_CODE == ARPING_DEMO)
+static void init_sta(void);
+static void init_ap(void);
+static void arping_task(void const *arg);
+#endif
 static void reset_slave(void);
-//static void arping_task(void const *arg);
 
 /* Needed for timer task */
 void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
@@ -53,8 +57,10 @@ void vApplicationGetIdleTaskMemory( StaticTask_t **ppxIdleTaskTCBBuffer,
 	StackType_t **ppxIdleTaskStackBuffer, uint32_t *pulIdleTaskStackSize );
 
 
-//struct network_handle *sta_handle, *ap_handle;
-//static osThreadId arping_task_id = 0;
+#if (MAIN_APP_CODE == ARPING_DEMO)
+struct network_handle *sta_handle, *ap_handle;
+static osThreadId arping_task_id = 0;
+#endif
 
 /** function definition **/
 
@@ -101,7 +107,9 @@ static void control_path_event_handler(uint8_t event)
 	{
 		case STATION_CONNECTED:
 		{
-			//init_sta();
+			#if (MAIN_APP_CODE == ARPING_DEMO)
+			init_sta();
+			#endif
 			break;
 		}
 		case STATION_DISCONNECTED:
@@ -111,7 +119,9 @@ static void control_path_event_handler(uint8_t event)
 		}
 		case SOFTAP_STARTED:
 		{
-			//init_ap();
+			#if (MAIN_APP_CODE == ARPING_DEMO)
+			init_ap();
+			#endif
 			break;
 		}
 		case SOFTAP_STOPPED:
@@ -164,7 +174,7 @@ void hosted_initialize(void)
 
 	/* init spi driver */
 	transport_init(transport_driver_event_handler);
-#if 0
+#if (MAIN_APP_CODE == ARPING_DEMO)
 #if !TEST_RAW_TP
 	/* This thread's priority shouls be >= transport driver's transaction task priority */
 	osThreadDef(Arping_Thread, arping_task, osPriorityAboveNormal, 0,
@@ -240,7 +250,7 @@ void vApplicationGetTimerTaskMemory( StaticTask_t **ppxTimerTaskTCBBuffer,
   /* place for user code */
 }
 
-#if 0
+#if (MAIN_APP_CODE == ARPING_DEMO)
 /**
   * @brief Station mode rx callback
   * @param  net_handle - station network handle

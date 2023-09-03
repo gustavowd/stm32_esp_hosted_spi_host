@@ -16,6 +16,7 @@
 
 #include "netdev_api.h"
 #include "spi_drv.h"
+#include "app_main.h"
 
 struct netif gnetif;
 ip4_addr_t ipaddr;
@@ -31,6 +32,7 @@ err_t ethernetif_init_low(struct netif *netif) {
 	return 0;
 }
 
+#if (MAIN_APP_CODE == LWIP_DEMO)
 struct network_handle *sta_handle, *ap_handle;
 
 //
@@ -233,6 +235,7 @@ void lwip_startup(uint8_t mac_address[6]) {
 	/* Start DHCP negotiation for a network interface (IPv4) */
 	dhcp_start(&gnetif);
 }
+#endif
 
 void lwip_example_app_platform_assert(const char *msg, int line,
 		const char *file) {

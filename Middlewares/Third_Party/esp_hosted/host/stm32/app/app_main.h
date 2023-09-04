@@ -27,7 +27,7 @@ extern "C" {
 /** Exported macros **/
 #define ARPING_DEMO	1
 #define LWIP_DEMO	2
-#define MAIN_APP_CODE ARPING_DEMO
+#define MAIN_APP_CODE LWIP_DEMO
 
 /** Exported variables **/
 

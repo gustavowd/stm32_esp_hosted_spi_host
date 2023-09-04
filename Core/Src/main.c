@@ -126,7 +126,7 @@ int main(void)
 
   /* Create the thread(s) */
   /* definition and creation of defaultTask */
-  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 128);
+  osThreadDef(defaultTask, StartDefaultTask, osPriorityNormal, 0, 1024);
   defaultTaskHandle = osThreadCreate(osThread(defaultTask), NULL);
 
   /* USER CODE BEGIN RTOS_THREADS */
@@ -368,6 +368,8 @@ void StartDefaultTask(void const * argument)
   hosted_initialize();
   /* implemented synchronous */
 #if (MAIN_APP_CODE == LWIP_DEMO)
+  // Wait the boot of the ESP32 network interface
+  osDelay(3000);
   ctrl_cmd_t req;
   req.msg_type = CTRL_REQ;
   req.ctrl_resp_cb = NULL;

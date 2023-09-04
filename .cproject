@@ -142,6 +142,7 @@
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Core/lwip}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Middlewares/Third_Party/lwip/src/include}&quot;"/>
 									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/${ProjName}/Middlewares/Third_Party/lwip/contrib/ports/cmsis}&quot;"/>
+									<listOptionValue builtIn="false" value="&quot;${workspace_loc:/stm32_esp_hosted_spi_host/Middlewares/Third_Party/lwip/src/include/lwip/apps}&quot;"/>
 								</option>
 								<inputType id="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c.801791184" superClass="com.st.stm32cube.ide.mcu.gnu.managedbuild.tool.c.compiler.input.c"/>
 							</tool>
@@ -171,6 +172,7 @@
 						<entry excluding="Src/freertos.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 						<entry excluding="Third_Party/esp_hosted/common/protobuf-c/t|Third_Party/esp_hosted/host/linux|Third_Party/esp_hosted/host/stm32/driver/transport/sdio|Third_Party/lwip/src/apps|Third_Party/lwip/test|Third_Party/lwip/doc|Third_Party/lwip/contrib/ports/win32|Third_Party/lwip/contrib/ports/unix|Third_Party/lwip/contrib/ports/freertos|Third_Party/lwip/contrib/examples|Third_Party/lwip/contrib/Coverity|Third_Party/lwip/contrib/apps|Third_Party/lwip/contrib/addons" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
+						<entry excluding="fsdata.c|makefsdata" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares/Third_Party/lwip/src/apps/http"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
@@ -287,6 +289,7 @@
 						<entry excluding="Src/freertos.c" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Core"/>
 						<entry flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Drivers"/>
 						<entry excluding="Third_Party/esp_hosted/common/protobuf-c/t|Third_Party/esp_hosted/host/linux|Third_Party/esp_hosted/host/stm32/driver/transport/sdio|Third_Party/lwip/src/apps|Third_Party/lwip/test|Third_Party/lwip/doc|Third_Party/lwip/contrib/ports/win32|Third_Party/lwip/contrib/ports/unix|Third_Party/lwip/contrib/ports/freertos|Third_Party/lwip/contrib/examples|Third_Party/lwip/contrib/Coverity|Third_Party/lwip/contrib/apps|Third_Party/lwip/contrib/addons" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares"/>
+						<entry excluding="fsdata.c|makefsdata" flags="VALUE_WORKSPACE_PATH|RESOLVED" kind="sourcePath" name="Middlewares/Third_Party/lwip/src/apps/http"/>
 					</sourceEntries>
 				</configuration>
 			</storageModule>
